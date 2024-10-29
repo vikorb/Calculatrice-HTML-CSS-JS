@@ -1,5 +1,18 @@
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((registration) => {
+        console.log("Service Worker enregistré avec succès:", registration);
+      })
+      .catch((error) => {
+        console.error("Échec de l'enregistrement du Service Worker:", error);
+      });
+  });
+}
+
 // Variables globales
-// Éléments mémoire et écran
+// Eléments mémoire et écran
 const memoireElt = document.querySelector("#memoire");
 const ecranElt = document.querySelector("#ecran");
 
@@ -15,14 +28,6 @@ let operation = null;
 // On initialise la mémoire
 let memoire;
 
-// Fonction pour récupérer la mémoire depuis le serveur
-async function recupererMemoire() {
-  const response = await fetch("/api/memoire");
-  const data = await response.json();
-  memoire = data.memoire;
-  if (memoire !== 0) memoireElt.style.display = "initial";
-}
-
 window.onload = () => {
   // On écoute les clics sur les touches
   let touches = document.querySelectorAll("span");
@@ -34,14 +39,15 @@ window.onload = () => {
   // On écoute les touches du clavier
   document.addEventListener("keydown", gererTouches);
 
-  // Récupération de la mémoire depuis le serveur
-  recupererMemoire();
+  // Récupération de la mémoire depuis le stockage local
+  memoire = localStorage.memoire ? parseFloat(localStorage.memoire) : 0;
+  if (memoire != 0) memoireElt.style.display = "initial";
 };
 
 /**
  * Cette fonction réagit au clic sur les touches
  */
-async function gererTouches(event) {
+function gererTouches(event) {
   let touche;
 
   // On liste les touches autorisées
@@ -132,29 +138,14 @@ async function gererTouches(event) {
         localStorage.memoire = localStorage.memoire
           ? parseFloat(localStorage.memoire) + parseFloat(affichage)
           : parseFloat(affichage);
+        // On affiche le M
         memoireElt.style.display = "initial";
-        await fetch("/api/memoire", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            operation: "add",
-            value: parseFloat(affichage),
-          }),
-        });
         break;
       case "MC":
         // On efface la mémoire
         localStorage.memoire = 0;
+        // On efface le M
         memoireElt.style.display = "none";
-        await fetch("/api/memoire", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ operation: "clear" }),
-        });
         break;
       case "MR":
         // On récupère la valeur stockée

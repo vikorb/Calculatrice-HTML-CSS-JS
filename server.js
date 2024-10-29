@@ -18,6 +18,11 @@ app.get("/api/memoire", (req, res) => {
   res.json({ memoire });
 });
 
+// Route pour le service worker
+app.get("/service-worker.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "service-worker.js"));
+});
+
 // Route pour mettre à jour la mémoire
 app.post("/api/memoire", (req, res) => {
   const { operation, value } = req.body;
