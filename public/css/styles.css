@@ -1,0 +1,58 @@
+body {
+  background-color: #ffe6f0; /* Fond rose pâle */
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+#ecran {
+  background-color: #ffb6c1; /* Rose doux */
+  color: #fff;
+  border-radius: 1rem; /* Augmenté pour plus de douceur */
+  font-size: 2rem;
+  padding: 20px; /* Augmenté pour un meilleur espacement */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  text-align: right; /* Aligner le texte à droite */
+}
+
+#memoire {
+  color: #ff69b4; /* Rose vif */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn {
+  border-radius: 1rem; /* Augmenté pour plus de douceur */
+  font-size: 1.5rem;
+  padding: 15px 0;
+  transition: background-color 0.3s, transform 0.2s; /* Ajout de la transition */
+}
+
+.btn-custom-clear {
+  background-color: #ff5c8d; /* Rose vif */
+  color: #fff;
+}
+
+.btn-custom-memory,
+.btn-custom-operator {
+  background-color: #ff79bc; /* Rose vif */
+  color: #fff;
+}
+
+.btn-custom-number {
+  background-color: #ffb6c1; /* Rose doux */
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+.btn:active {
+  transform: translateY(0); /* Réinitialiser l'élévation lors de l'activation */
+}
