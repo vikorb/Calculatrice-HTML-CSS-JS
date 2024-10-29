@@ -1,58 +1,127 @@
 body {
-  background-color: #ffe6f0; /* Fond rose pâle */
+  background-color: #ffe6f0;
+  /* Fond rose pâle */
   font-family: "Roboto", sans-serif;
+  height: 100vh;
+  /* S'assurer que le corps prend toute la hauteur de l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   max-width: 400px;
+  /* Largeur maximale */
+  width: 90vw;
+  /* Prendre 90% de la largeur de l'écran */
   margin: auto;
-  padding-top: 50px;
+  padding: 2vh 0;
+  /* Espacement en haut et en bas */
 }
 
 #ecran {
-  background-color: #ffb6c1; /* Rose doux */
+  background-color: #ffb6c1;
+  /* Rose doux */
   color: #fff;
-  border-radius: 1rem; /* Augmenté pour plus de douceur */
-  font-size: 2rem;
-  padding: 20px; /* Augmenté pour un meilleur espacement */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
-  text-align: right; /* Aligner le texte à droite */
+  border-radius: 1rem;
+  /* Arrondi des coins */
+  font-size: 4vw;
+  /* Taille de police fluide */
+  padding: 5vh;
+  /* Espacement en pourcentage de la hauteur de la fenêtre */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: right;
 }
 
 #memoire {
-  color: #ff69b4; /* Rose vif */
+  color: #ff69b4;
+  /* Rose vif */
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2vw;
+  /* Taille de police fluide */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permettre aux boutons de se déplacer sur plusieurs lignes */
+  margin: 0 -2px;
+  /* Ajuster la marge pour éviter le débordement */
 }
 
 .btn {
-  border-radius: 1rem; /* Augmenté pour plus de douceur */
-  font-size: 1.5rem;
-  padding: 15px 0;
-  transition: background-color 0.3s, transform 0.2s; /* Ajout de la transition */
+  border-radius: 1rem;
+  /* Arrondi des coins */
+  font-size: 2.5vw;
+  /* Taille de police fluide */
+  padding: 3vh 0;
+  /* Espacement en pourcentage de la hauteur de la fenêtre */
+  flex: 1 1 22%;
+  /* Permettre aux boutons de grandir et de se rétrécir */
+  margin: 2px;
+  /* Espacement entre les boutons */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Ajout de la transition */
 }
 
 .btn-custom-clear {
-  background-color: #ff5c8d; /* Rose vif */
+  background-color: #ff5c8d;
+  /* Rose vif */
   color: #fff;
 }
 
 .btn-custom-memory,
 .btn-custom-operator {
-  background-color: #ff79bc; /* Rose vif */
+  background-color: #ff79bc;
+  /* Rose vif */
   color: #fff;
 }
 
 .btn-custom-number {
-  background-color: #ffb6c1; /* Rose doux */
+  background-color: #ffb6c1;
+  /* Rose doux */
   color: #fff;
 }
 
 .btn:hover {
   opacity: 0.9;
-  transform: translateY(-2px); /* Légère élévation au survol */
+  transform: translateY(-2px);
+  /* Légère élévation au survol */
 }
 
 .btn:active {
-  transform: translateY(0); /* Réinitialiser l'élévation lors de l'activation */
+  transform: translateY(0);
+  /* Réinitialiser l'élévation lors de l'activation */
+}
+
+@media (max-width: 576px) {
+  #ecran {
+    font-size: 3vw;
+    /* Ajustement de la taille de police */
+    padding: 4vh;
+    /* Ajustement de l'espacement */
+  }
+
+  .btn {
+    font-size: 2vw;
+    /* Ajustement de la taille de police */
+    padding: 2vh;
+    /* Ajustement de l'espacement */
+  }
+}
+
+@media (max-width: 375px) {
+  #ecran {
+    font-size: 2.5vw;
+    /* Réduire encore la taille de police */
+    padding: 3vh;
+    /* Ajustement de l'espacement */
+  }
+
+  .btn {
+    font-size: 1.8vw;
+    /* Réduire la taille des boutons */
+    padding: 2vh;
+    /* Ajustement de l'espacement */
+  }
 }
