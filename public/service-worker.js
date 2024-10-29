@@ -2,9 +2,10 @@ const CACHE_NAME = "calculator-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/css/styles.css", // Assure-toi que ce fichier existe
-  "/js/scripts.js", // Assure-toi que ce fichier existe
-  "/service-worker.js", // Ce fichier doit aussi être accessible
+  "/css/styles.css",
+  "/js/scripts.js",
+  "/service-worker.js",
+  "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
 ];
 
 // Installation du service worker
