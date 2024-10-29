@@ -49,6 +49,13 @@ body {
   /* Ajuster la marge pour éviter le débordement */
 }
 
+.custom-title {
+  color: #fd3f85; /* Couleur rose mature */
+  font-weight: bolder; /* Gras */
+  font-size: 3rem; /* Taille du texte */
+  margin-bottom: 20px; /* Espacement en bas */
+}
+
 .btn {
   border-radius: 1rem;
   /* Arrondi des coins */

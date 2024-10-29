@@ -6,6 +6,7 @@ const urlsToCache = [
   "/js/scripts.js",
   "/service-worker.js",
   "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+  "/img/calculatrice.ico",
 ];
 
 // Installation du service worker

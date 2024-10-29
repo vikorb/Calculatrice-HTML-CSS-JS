@@ -41,7 +41,7 @@ window.onload = () => {
 
   // Récupération de la mémoire depuis le stockage local
   memoire = localStorage.memoire ? parseFloat(localStorage.memoire) : 0;
-  if (memoire != 0) memoireElt.style.display = "initial";
+  if (memoire !== 0) memoireElt.style.display = "initial";
 };
 
 /**
