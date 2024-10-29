@@ -52,9 +52,9 @@ body {
 .btn {
   border-radius: 1rem;
   /* Arrondi des coins */
-  font-size: 2.5vw;
+  font-size: 2vw;
   /* Taille de police fluide */
-  padding: 3vh 0;
+  padding: 2vh 0;
   /* Espacement en pourcentage de la hauteur de la fenêtre */
   flex: 1 1 22%;
   /* Permettre aux boutons de grandir et de se rétrécir */

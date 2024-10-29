@@ -11,11 +11,27 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="img/calculatrice.ico" type="image/x-icon" />
+    <!-- Ajout de l'icône -->
   </head>
 
   <body>
-    <main class="container">
-      <section class="row">
+    <main class="container text-center">
+      <!-- Ajout d'une balise img pour afficher l'icône -->
+      <img
+        src="img/calculatrice.ico"
+        alt="Icône de la calculatrice"
+        class="mb-3"
+        style="
+          width: 150px;
+          height: 150px;
+          position: absolute;
+          top: 50px;
+          left: 80px;
+        "
+      />
+
+      <section class="row justify-content-center">
         <div class="col-12 my-2">
           <span id="ecran" class="btn btn-lg btn-block text-right">0</span>
           <p id="memoire" class="position-absolute"></p>
